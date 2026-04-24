@@ -9,6 +9,7 @@ export const useMain = () =>{
     const [error, setError] = useState(null);
     const [list, setList] = useState([]);
     const [searchI, SetSearchI] = useState(false)
+    const [showModal, setShowModal] = useState(false)
 
     const inputSearch = useRef();
 
@@ -17,12 +18,14 @@ export const useMain = () =>{
     }
 
     useEffect(() =>{
-        
+        //mandar a llamar getProductList 
     }, [])
 
     return{
         getProductsList,
         SetSearchI,
-        searchI
+        searchI,
+        setShowModal,
+        showModal
     }
 }

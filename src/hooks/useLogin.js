@@ -4,42 +4,47 @@ import { loginUserService } from "../services/loginServices";
 import * as ScreenOrientation from 'expo-screen-orientation';
 import { BackHandler } from "react-native";
 
-export const useLogin = () =>{
+export const useLogin = () => {
     const navigate = useNavigation();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const [username, setUsername]=useState("");
-    const [password, setPassword]=useState("");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
 
-    const loginUser = async() =>{
+    const loginUser = async () => {
         try {
 
             setLoading(true);
 
-            navigate.navigate('Main')
+
 
             // const data = {
             //     username: username,
             //     password: password
             // }
-           
+
             // const response = await loginUserService(data);
 
-            // !response.ok?(alert(response.message)):(alert(response.token));
+            // const key = response.token;
+
+            // !response.ok ? (alert(response.message)) : (navigate.navigate('Main'));
+
+            navigate.navigate('Main')
+
 
         } catch (error) {
-            
-        }finally{
+
+        } finally {
             setLoading(false)
         }
     }
 
-    BackHandler.addEventListener('hardwareBackPress', () =>{
+    BackHandler.addEventListener('hardwareBackPress', () => {
         ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP)
     })
 
-    return{
+    return {
         loginUser,
         setUsername,
         setPassword
