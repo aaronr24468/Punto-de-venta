@@ -36,6 +36,12 @@ export const MainPuntoDeVenta = () => {
                         </Pressable>
                     </View>
 
+                    <ScrollView style={style.listInventory}>
+                        <View style={style.listInventoryContainer}>
+
+                        </View>
+                    </ScrollView>
+
                 </View>}
             </View>
 

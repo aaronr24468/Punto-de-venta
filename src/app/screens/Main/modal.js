@@ -12,7 +12,7 @@ export const ModalOptions = ({showModal, setShowModal}) => {
     return (
         <View style={showModal ? (style.showModal) : (style.hideModal)}>
             <View style={showModal ? (style.backGModal) : (style.backGModalHidde)}>
-                <View style={style.modalContainer}>
+                <View style={style.modalContainer} >
                     <View style={style.containerOptionsModal}>
                         <Pressable style={style.btnOption}>
                             <Image source={profile} style={style.imageModal} />

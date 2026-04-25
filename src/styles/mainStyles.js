@@ -85,6 +85,8 @@ export const style = StyleSheet.create({
         width: 40,
         height: 40
     },
+
+
     totalComponent: {
         width: '100%',
         height: 'auto',
@@ -111,7 +113,6 @@ export const style = StyleSheet.create({
         width: '100%',
         height: 'auto',
         position: 'relative',
-        
     },
     inputSearchItem: {
         width: '100%',
@@ -119,7 +120,6 @@ export const style = StyleSheet.create({
         fontSize: 20,
         paddingRight: 20,
         paddingLeft: 20,
-        
     },
     exitSeachItem: {
         width: 30,
@@ -135,6 +135,16 @@ export const style = StyleSheet.create({
     exitBtn: {
         width: '80%',
         height: '80%'
+    },
+    listInventory:{
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'white',
+        boxShadow: 'inset 0px 0px 5px 0px rgb(0,0,0)'
+    },
+    listInventoryContainer:{
+        width: '100%',
+        height: '100%',
     },
 
 

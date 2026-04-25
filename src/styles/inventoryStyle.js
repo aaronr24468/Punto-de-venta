@@ -8,14 +8,15 @@ export const style = StyleSheet.create({
     headerInventory:{
         width: '100%',
         height: 'auto',
-        gap: 10
+        gap: 30
     },
 
 
     headerBackContainer:{
         width: '100%',
         height: 'auto',
-        backgroundColor: 'rgb(0, 174, 255)'
+        backgroundColor: 'rgb(0, 174, 255)',
+        paddingTop: 10
     },
     btnBack:{
         width: '50%',
@@ -45,7 +46,7 @@ export const style = StyleSheet.create({
     },
     textInventoryS:{
         width: '50%',
-        fontSize: 30,
+        fontSize: 25,
         flexWrap: 'wrap',
         fontWeight: '500'
     },
@@ -53,7 +54,7 @@ export const style = StyleSheet.create({
         width:'auto',
         height: 50,
         backgroundColor: 'rgb(0, 174, 255)',
-        borderRadius: 20,
+        borderRadius: 10,
         flexDirection: 'row',
         alignItems: 'center',
         padding: 5
@@ -64,5 +65,29 @@ export const style = StyleSheet.create({
     },
     textAddP:{
         color: 'white'
+    },
+
+
+    filterOPtions:{
+        width: '100%',
+        height: 'auto',
+        flexDirection: 'row',
+        gap: 5,
+        paddingRight: 10,
+        paddingLeft: 10
+    },
+    filterContainer:{
+        width: '50%',
+        height: 'auto'
+    },
+    titleFilter:{
+        fontSize: 17,
+        fontWeight: 500
+    },
+    pickerStyle:{
+        width: '100%',
+        height: 'auto',
+        boxShadow: '0px 0px 5px 0px rgb(0,0,0)',
+        borderRadius: 10
     }
 })
