@@ -8,13 +8,16 @@ import upload from '../../../assets/uploadImage.png'
 import { FormDataProduct } from "./form";
 
 
+
 export const AddProduct = ({ }) => {
     const navigate = useNavigation();
-    const { getImageData, image} = useAddProduct();
+    const { getImageData, image, setCategory, category, setQuantity, quantity } = useAddProduct();
+
+    
 
     return (
         <View style={style.mainViewAdd}>
-            <StatusBar hidden={true} />
+
             <View style={style.headerAddProd}>
                 <Pressable style={style.backBtn} onPress={() => navigate.goBack()}>
                     <Image source={back} style={style.imageBack} />
@@ -25,16 +28,26 @@ export const AddProduct = ({ }) => {
 
                 <View style={style.imageUploadContainer}>
                     <Pressable style={style.uploadImageBtn} onPress={getImageData}>
-                        {image === null? (<Image source={upload} style={style.imageUpload}/>):(<Image source={{uri: image}} style={style.imageSelected}/>)}
-                        {image === null? (<Text>Subir imagen</Text>):('')}
+                        {image === null ? (<Image source={upload} style={style.imageUpload} />) : (<Image source={{ uri: image }} style={style.imageSelected} />)}
+                        {image === null ? (<Text>Subir imagen</Text>) : ('')}
                     </Pressable>
                 </View>
 
                 <View style={style.formulario}>
-                    <FormDataProduct />
+                    <FormDataProduct setCategory={setCategory} category={category} setQuantity={setQuantity} quantity={quantity} />
                 </View>
-
             </View>
+
+            <View style={style.saveProductContainer}>
+                <Pressable style={style.btnSave}>
+                    <Text style={style.textSave}>
+                        Guardar
+                    </Text>
+                </Pressable>
+            </View>
+
+
+
         </View>
     )
 }

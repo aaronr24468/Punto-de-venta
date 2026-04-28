@@ -16,7 +16,7 @@ export const Inventory = ({ }) => {
 
     return (
         <View style={style.InventoryContainer}>
-            <StatusBar hidden={true} />
+            
             <View style={style.headerInventory}>
 
                 <View style={style.headerBackContainer}>

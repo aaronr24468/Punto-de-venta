@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import * as ScreenOrientation from "expo-screen-orientation";
-import { BackHandler } from "react-native";
+import { BackHandler, StatusBar, AppState } from "react-native";
 import SystemNavigationBar from "react-native-system-navigation-bar";
 
 
@@ -19,6 +19,16 @@ export const useMain = () =>{
 
     useEffect(() =>{
         //mandar a llamar getProductList 
+
+        const statusApp = (nextState) => {
+            if (nextState === 'active') {
+                StatusBar.setHidden(true, 'none')
+            }
+        }
+
+        const subscription = AppState.addEventListener('change', statusApp)
+
+        StatusBar.setHidden(true)
     }, [])
 
     return{

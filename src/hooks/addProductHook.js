@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import * as ImagePicker from 'expo-image-picker';
-import { Alert } from "react-native";
+import { Alert, StatusBar, AppState } from "react-native";
 
 export const useAddProduct = () =>{
     const [image, setImage] = useState(null);
+    const [category, setCategory] = useState('');
+    const [quantity, setQuantity] = useState("0");
 
     const getImageData = async() =>{
 
@@ -25,11 +27,30 @@ export const useAddProduct = () =>{
 
         if(!result.canceled){
             setImage(result.assets[0].uri)
+            StatusBar.setHidden(true)
         }
     }
 
+    useEffect(() =>{
+        const statusApp = (nextState) =>{
+            if(nextState === 'active'){
+                StatusBar.setHidden(true, 'none')
+            }
+        }
+
+        const subscription = AppState.addEventListener('change', statusApp)
+
+        StatusBar.setHidden(true)
+    })
+
+    
+
     return{
         getImageData,
-        image
+        image,
+        setCategory,
+        category,
+        setQuantity,
+        quantity
     }
 }

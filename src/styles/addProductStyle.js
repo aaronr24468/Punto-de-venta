@@ -28,9 +28,10 @@ export const style = StyleSheet.create({
         color: 'white'
     },
 
+
     formData: {
         width: '100%',
-        height: '100%',
+        height: 'auto',
         alignItems: 'center',
         paddingTop: 30
     },
@@ -64,9 +65,9 @@ export const style = StyleSheet.create({
 
     formulario: {
         width: '100%',
-        height: '100%',
+        height: 'auto',
         padding: 20,
-        gap: 10
+        gap: 15
     },
     nameProductContainer: {
         width: '100%',
@@ -88,7 +89,7 @@ export const style = StyleSheet.create({
     },
     inputNameComponent:{
         width: '100%',
-        height: 40,
+        height: 50,
         borderWidth: 2,
         borderRadius: 10,
         paddingRight: 10,
@@ -102,12 +103,14 @@ export const style = StyleSheet.create({
         height: 30,
         position: 'absolute',
         right: 10,
-        top: 5
+        top: 10
     },
 
+
+
     inputCodeBar:{
-        width: '75%',
-        height: 40,
+        width: '100%',
+        height: 50,
         borderWidth: 2,
         borderRadius: 10,
         paddingRight: 10,
@@ -116,12 +119,92 @@ export const style = StyleSheet.create({
         textAlignVertical: 'center',
         textDecorationLine: 'none',
     },
-    containerBarLogo:{
-        width: 80,
-        height: '100%'
-    },
     codeBar:{
         width: 40,
         height: 40,
+        position: 'absolute',
+        right: 5,
+        top: 5
+    },
+    pickerContainer:{
+        width: '100%',
+        height: 'auto',
+        borderWidth: 2,
+        borderColor: 'rgb(0,0,0)',
+        borderRadius: 10,
+        backgroundColor: 'rgb(228, 228, 228)'
+    },
+
+
+
+    amountContainer:{
+        width: '100%',
+        height: 50,
+    },
+    amountInputContainer:{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        gap: 10
+    },
+    inputAmount:{
+        width: '60%',
+        height: 50,
+        borderWidth: 2,
+        borderColor: 'rgb(0,0,0)',
+        borderRadius: 10,
+        paddingLeft: 10
+    },
+    containerButtons:{
+        width: 'auto',
+        height: '100%',
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    btnLess:{
+        width: 60,
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderWidth: 2,
+        borderColor: 'rgb(0,0,0)',
+        borderTopLeftRadius: 10,
+        borderBottomLeftRadius: 10,
+    },
+    btnMore:{
+        width: 60,
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderWidth: 2,
+        borderColor: 'rgb(0,0,0)',
+        borderBottomRightRadius: 10,
+        borderTopEndRadius: 10
+    },
+    fontBtn:{
+        fontSize: 20,
+        fontWeight: '600'
+    },
+
+
+    saveProductContainer:{
+        width: '100%',
+        height: 'auto',
+        paddingTop: 25,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    btnSave:{
+        width: 250,
+        height: 40,
+        boxShadow: '0px 0px 5px 0px rgb(0,0,0)',
+        borderRadius: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'rgb(0, 174, 255)'
+    },
+    textSave:{
+        fontSize: 20,
+        color: 'white',
+        fontWeight: '600'
     }
 })
