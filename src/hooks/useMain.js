@@ -2,9 +2,12 @@ import { useState, useEffect, useRef } from "react";
 import * as ScreenOrientation from "expo-screen-orientation";
 import { BackHandler, StatusBar, AppState } from "react-native";
 import SystemNavigationBar from "react-native-system-navigation-bar";
+import * as SecureStorage from 'expo-secure-store'
+import { useNavigation } from "@react-navigation/native";
 
 
 export const useMain = () =>{
+    const navigate = useNavigation();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [list, setList] = useState([]);
@@ -14,11 +17,17 @@ export const useMain = () =>{
     const inputSearch = useRef();
 
     const getProductsList = async() =>{
-        
+       
+    }
+
+    const logOut = async() =>{
+        await SecureStorage.deleteItemAsync('token');
+        navigate.navigate('Login');
     }
 
     useEffect(() =>{
         //mandar a llamar getProductList 
+        getProductsList(); 
 
         const statusApp = (nextState) => {
             if (nextState === 'active') {
@@ -36,6 +45,7 @@ export const useMain = () =>{
         SetSearchI,
         searchI,
         setShowModal,
-        showModal
+        showModal,
+        logOut
     }
 }

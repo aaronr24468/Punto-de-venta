@@ -11,9 +11,9 @@ import { FormDataProduct } from "./form";
 
 export const AddProduct = ({ }) => {
     const navigate = useNavigation();
-    const { getImageData, image, setCategory, category, setQuantity, quantity } = useAddProduct();
+    const { getImageData, image, setCategory, category, setQuantity, quantity, setName, setCode, setPrice,getProductInfo } = useAddProduct();
 
-    
+
 
     return (
         <View style={style.mainViewAdd}>
@@ -34,12 +34,20 @@ export const AddProduct = ({ }) => {
                 </View>
 
                 <View style={style.formulario}>
-                    <FormDataProduct setCategory={setCategory} category={category} setQuantity={setQuantity} quantity={quantity} />
+                    <FormDataProduct
+                        setCategory={setCategory}
+                        category={category}
+                        setQuantity={setQuantity}
+                        quantity={quantity} 
+                        setName={setName}
+                        setCode={setCode}
+                        setPrice={setPrice}
+                        />
                 </View>
             </View>
 
             <View style={style.saveProductContainer}>
-                <Pressable style={style.btnSave}>
+                <Pressable style={style.btnSave} onPress={getProductInfo}>
                     <Text style={style.textSave}>
                         Guardar
                     </Text>

@@ -10,13 +10,13 @@ import { ModalOptions } from "./modal";
 
 
 export const MainPuntoDeVenta = () => {
-    const { getProductsList, searchI, SetSearchI, setShowModal, showModal } = useMain();
+    const { getProductsList, searchI, SetSearchI, setShowModal, showModal, logOut } = useMain();
 
     return (
         <View style={style.mainComponent}>
             <StatusBar hidden={true} />
 
-            <ModalOptions showModal={showModal} setShowModal={setShowModal}/>
+            <ModalOptions showModal={showModal} setShowModal={setShowModal} logOut={logOut}/>
 
             <Pressable style={style.options} onPress={() => showModal ? (setShowModal(false)) : (setShowModal(true))}>
                 {showModal ? (<Image source={out} style={style.optionsSvg} />) : (<Image source={options} style={style.optionsSvg} />)}

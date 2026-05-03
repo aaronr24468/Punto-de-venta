@@ -7,7 +7,7 @@ import pencil from '../../../assets/pencil.png';
 import barCode from '../../../assets/barCode.png'
 import { useState } from "react";
 
-export const FormDataProduct = ({ setCategory, category, setQuantity, quantity }) => {
+export const FormDataProduct = ({ setCategory, category, setQuantity, quantity, setName, setCode, setPrice }) => {
     const [isFocused, setIsFocused] = useState(false);
     const [isFocusedBar, setIsFocusedBar] = useState(false)
     const [isFocusedPrice, setIsFocusedPrice] = useState(false);
@@ -26,6 +26,7 @@ export const FormDataProduct = ({ setCategory, category, setQuantity, quantity }
                             }]}
                         onFocus={() => setIsFocused(true)}
                         onBlur={() => setIsFocused(false)}
+                        onChangeText={(value) => setName(value)}
                     />
 
                     <Image source={pencil} style={style.pen} />
@@ -38,6 +39,7 @@ export const FormDataProduct = ({ setCategory, category, setQuantity, quantity }
                         style={[style.inputCodeBar, { borderColor: isFocusedBar ? 'rgb(0, 162, 255)' : 'rgb(0, 0, 0)' }]}
                         onFocus={() => setIsFocusedBar(true)}
                         onBlur={() => setIsFocusedBar(false)}
+                        onChangeText={(value) => setCode(value)}
                     />
                     <Image source={barCode} style={style.codeBar} />
                 </View>
@@ -48,6 +50,8 @@ export const FormDataProduct = ({ setCategory, category, setQuantity, quantity }
                     <Picker selectedValue={category} onValueChange={(value, index) => setCategory(value)} >
                         <Picker.Item label='Frutas' value='Frutas' />
                         <Picker.Item label='Verduras' value='Verduras' />
+                        <Picker.Item label='Frituras' value='Frituras' />
+                        <Picker.Item label="Resfresco" value="Refresco"/>
                     </Picker>
                 </View>
             </View>
@@ -58,6 +62,7 @@ export const FormDataProduct = ({ setCategory, category, setQuantity, quantity }
                         style={[style.inputCodeBar, { borderColor: isFocusedPrice ? 'rgb(0, 162, 255)' : 'rgb(0, 0, 0)' }]}
                         onFocus={() => setIsFocusedPrice(true)}
                         onBlur={() => setIsFocusedPrice(false)}
+                        onChangeText={(value) => setPrice(value)}
                     />
                 </View>
             </View>

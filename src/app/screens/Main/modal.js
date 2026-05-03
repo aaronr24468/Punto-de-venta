@@ -4,9 +4,10 @@ import profile from '../../../assets/profile.png';
 import employee from '../../../assets/employee.png';
 import ticket from '../../../assets/receipt.png';
 import inventory from '../../../assets/inventory.png';
+import logout from '../../../assets/logout.png'
 import { useNavigation } from "@react-navigation/native";
 
-export const ModalOptions = ({showModal, setShowModal}) => {
+export const ModalOptions = ({showModal, setShowModal, logOut}) => {
     const nav = useNavigation();
 
     return (
@@ -29,6 +30,12 @@ export const ModalOptions = ({showModal, setShowModal}) => {
                         <Pressable style={style.btnOption} onPress={() => nav.navigate('Inventory')}>
                             <Image source={inventory} style={style.imageModal} />
                             <Text>Inventario</Text>
+                        </Pressable>
+                    </View>
+                    <View style={style.logOutContainer}>
+                        <Pressable style={style.btnLogout} onPress={logOut}>
+                            <Image source={logout} style={style.imgLogOut}/>
+                            <Text>Cerrar sesion</Text>
                         </Pressable>
                     </View>
                 </View>

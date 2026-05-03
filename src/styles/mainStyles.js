@@ -63,6 +63,8 @@ export const style = StyleSheet.create({
         justifyContent: 'space-between',
         backgroundColor: 'rgb(0, 174, 255)',
         boxShadow: '0px 0px 5px 0px rgb(0,0,0)',
+        paddingTop: 50,
+        paddingBottom: 60
     },
     containerOptionsModal: {
         width: '100%',
@@ -84,6 +86,23 @@ export const style = StyleSheet.create({
     imageModal: {
         width: 40,
         height: 40
+    },
+    logOutContainer:{
+        width: '100%',
+        height: '50',
+    },
+    btnLogout:{
+        width: '100%',
+        height: 50,
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: 'rgb(255, 255, 255)',
+        borderRadius: 10,
+        padding: 10
+    },
+    imgLogOut:{
+        width: 45,
+        height: 45
     },
 
 

@@ -3,6 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import { loginUserService } from "../services/loginServices";
 import * as ScreenOrientation from 'expo-screen-orientation';
 import { BackHandler } from "react-native";
+import * as SecureStorage from 'expo-secure-store'
 
 export const useLogin = () => {
     const navigate = useNavigation();
@@ -17,20 +18,18 @@ export const useLogin = () => {
 
             setLoading(true);
 
+            //await SecureStorage.deleteItemAsync('token')
 
+            const data = {
+                username: username,
+                password: password
+            }
 
-            // const data = {
-            //     username: username,
-            //     password: password
-            // }
+            const response = await loginUserService(data);
 
-            // const response = await loginUserService(data);
+            const key = response.token;
 
-            // const key = response.token;
-
-            // !response.ok ? (alert(response.message)) : (navigate.navigate('Main'));
-
-            navigate.navigate('Main')
+            !response.ok ? (alert(response.message)) : (await SecureStorage.setItem('token', key),navigate.navigate('Main'));
 
 
         } catch (error) {
